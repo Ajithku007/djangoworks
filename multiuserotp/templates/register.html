@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mx-auto mb-5 w-50 mt-5 pt-5 border border-2">
+  <h2>Register</h2>
+<form method="post">
+  {% csrf_token%}
+  {{ form|crispy }}
+  <div class="d-flex  justify-content-center">
+  <input type="submit" class="btn bg-primary mt-3 mb-5 ">
+
+  </div>
+</form>
+</div>
+
+{% endblock %}

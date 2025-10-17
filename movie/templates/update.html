@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>update</h2>
+
+<div class="d-flex align-items-center mt-5 mb-5" style="height:100vh;">
+    <div class="border border-3 border-light mx-auto my-auto mb-5 p-5 text-center " style="width:60%;">
+       <h2 class="text-center p-4">Add Movies</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="d-flex justify-content-center  text-light mb-3" >
+            <input type="submit" class="bg-primary border-0 mt-3 rounded-3 p-2" style="width:100px">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

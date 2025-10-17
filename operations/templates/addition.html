@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container mt-5 p-3 w-3 shadow  mx-auto">
+  <h2 class="text-center">addition</h2>
+  <div class="container mt-5">
+    <form method="post">
+       {% csrf_token %}
+      <div class="mb-3 mt-3">
+       <label class="form-label">num 1</label>
+      <input type="number" class="form-control" name="n1">
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label class="form-label">num2</label>
+      <input type="number" class="form-control" name="n2">
+      </div>
+
+      <div class="mb-3 mt-3">
+        <input type="submit" value="Add" class="ps-4 pe-4 bg-danger mt-4">
+      </div>
+
+      {% if result %}
+      <h2>the sum is {{result}}</h2>
+      {% endif %}
+    </form>
+  </div>
+</div>
+{% endblock %}

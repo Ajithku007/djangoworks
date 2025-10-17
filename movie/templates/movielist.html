@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class=" container d-flex align-items-center" >
+    <div class=" mx-auto my-auto" style="width:100%">
+       <h2 class="text-center p-4">Movie List</h2>
+        <div class="row  mx-auto" >
+            {% for i in view %}
+            <div class="col-4 mb-4 " >
+                <div class="card mx-auto text-dark" style="width: 18rem;">
+                    <img src="{{ i.image.url }}" class="card-img-top" alt="..." style="height:200px;width:100%;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ i.title}}</h5>
+                        <p class="card-text"><strong>Language:</strong>{{ i.language }}</p>
+                        <p class="card-text"><strong>Year:</strong>{{ i.year }}</p>
+                      <a href="{% url 'moviedetails' i.id %}" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+      </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

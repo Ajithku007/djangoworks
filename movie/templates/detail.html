@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mx-auto  mt-5">
+   <div class="row container  mx-auto mb-5 mt-5 " style="width:60%">
+
+       <div class="card mb-3 mx-auto mt-5 mb-5" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-6 " style="height:300px;">
+      <img src="{{ detail.image.url }}" class=" rounded  " style="height:100%;width:100%"  alt="...">
+    </div>
+    <div class="col-md-6">
+      <div class="card-body text-dark pt-5">
+        <h5 class="card-title">{{ detail.title}}</h5>
+        <p class="card-text"><b>language :</b>{{ detail.language}}</p>
+          <p class="card-text"><b>year :</b>{{ detail.year}}</p>
+          <p class="card-text"><b>Description:</b>{{ detail.description }}</p>
+
+          <a href="{% url 'update' detail.id %}" class="btn btn-dark text-light me-3 mt-3"> update</a>
+          <a class="btn btn-dark text-light me-3 mt-3" href="{% url 'deletemovies' detail.id %}"> delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+   </div>
+</div>
+
+{% endblock%}

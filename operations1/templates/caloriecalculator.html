@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container mt-5 p-3 w-3 shadow  mx-auto">
+  <h2 class="text-center">Calorie Calculator</h2>
+  <div class="container mt-5 d-flex justify-content-center" >
+    <form method="post">
+       {% csrf_token %}
+       {{ calories|crispy}}
+
+      <div class="mb-3 mt-3">
+        <input type="submit" value="calculate" class="ps-4 pe-4 bg-danger mt-4">
+      </div>
+
+      {% if calorie_value %}
+      <h2>the Calorie is {{calorie_value}} cal</h2>
+      {% endif %}
+    </form>
+  </div>
+</div>
+{% endblock %}

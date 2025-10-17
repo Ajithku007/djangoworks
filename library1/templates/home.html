@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mx-auto text-center border border-2 mt-5">
+<h2>welcome to home page</h2>
+    {% if user.is_authenticated %}
+    <h3>{{ user.username}}</h3>
+    {% else %}
+    <h3>Guest</h3>
+    {% endif %}
+</div>
+
+{% endblock %}
+
